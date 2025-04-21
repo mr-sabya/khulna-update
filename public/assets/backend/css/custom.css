@@ -1,0 +1,14 @@
+.login-form .card-header{
+    display: block;
+    background-color: rgb(66, 36, 196);
+    color: #fff;
+    padding: 15px 0;
+}
+
+.login-form .card-header h4{
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+}

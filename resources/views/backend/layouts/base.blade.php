@@ -109,14 +109,9 @@
                                     </a>
                                     @endif
 
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        <i class="fa-solid fa-right-from-bracket"></i>
-                                        <span class="ml-2">Logout </span>
-                                    </a>
+                                    <!-- logout component -->
+                                    <livewire:backend.auth.logout />
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
                                 </div>
                             </li>
                         </ul>
@@ -132,7 +127,7 @@
                 <ul class="metismenu" id="menu">
                     <li class="nav-label first">Main Menu</li>
                     <li>
-                        <a href="{{ route('dashboard') }}" aria-expanded="false">
+                        <a href="{{ route('admin.dashboard') }}" aria-expanded="false">
                             <i class="fa-solid fa-house"></i><span class="nav-text">Dashboard</span>
                         </a>
                     </li>
