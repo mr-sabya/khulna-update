@@ -74,7 +74,7 @@
                             </div>
                         </div>
                         <div class="call-button text-center">
-                            <a class="call-btn" href="{{ route('doctor.show', $doctor->id) }}">
+                            <a class="call-btn" href="{{ route('doctor.show', $doctor->id) }}" wire:navigate>
                                 <i class="fa-solid fa-circle-info"></i> Details
                             </a>
                         </div>
