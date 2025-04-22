@@ -89,16 +89,19 @@
 </div>
 
 <script>
-    document.addEventListener('livewire:init', function() {
-        function initSelect2() {
-            $('#district_id').select2().on('change', function(e) {
-                @this.set('district_id', $(this).val());
-            });
+    function initSelect2() {
+        $('#district_id').select2().on('change', function(e) {
+            @this.set('district_id', $(this).val());
+        });
 
-            $('#city_id').select2().on('change', function(e) {
-                @this.set('city_id', e.target.value);
-            });
-        }
+        $('#city_id').select2().on('change', function(e) {
+            @this.set('city_id', e.target.value);
+        });
+    }
+
+
+    document.addEventListener('livewire:init', function() {
+
 
         initSelect2();
 
@@ -118,13 +121,27 @@
         });
 
         Livewire.on('resetSelect2', () => {
-            $('#district_id').val('').trigger('change');
-            $('#city_id').val('').trigger('change');
+            // Reset the Select2 elements and trigger change
+            $('#district_id').val(null).trigger('change'); // Set null to reset
+            $('#city_id').val(null).trigger('change'); // Set null to reset
+
+            // Optionally, you can also reset the Select2 elements visually
+            $('#district_id').select2('destroy').select2(); // Destroy and re-initialize to reset UI
+            $('#city_id').select2('destroy').select2().empty().append('<option value="">Select City</option>');; // Destroy and re-initialize to reset UI
+
+            // Reset the Livewire model
+            $('#district').val($('#district option:first').val()).trigger('change'); // Select first option
+            $('#city').val($('#city option:first').val()).trigger('change'); // Select first option
         });
 
         // Re-initialize after Livewire updates
         Livewire.hook('message.processed', () => {
             initSelect2();
         });
+
+
+    });
+    document.addEventListener('livewire:navigated', function() {
+        initSelect2();
     });
 </script>

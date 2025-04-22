@@ -25,7 +25,7 @@
                         </div>
 
                         <div class="col-lg-2">
-                            <button type="button" wire:click="resetFileds" class="btn w-100 form-btn custom-btn">
+                            <button type="button" wire:click="resetFields" class="btn w-100 form-btn custom-btn">
                                 <i class="fa-solid fa-rotate"></i> Reset
                             </button>
                         </div>
@@ -67,7 +67,7 @@
     </div>
 
     {{-- Location Modal --}}
-    <div class="modal fade" id="locationModal" tabindex="-1" wire:ignore.self>
+    <div class="modal fade" id="locationModal" tabindex="-1" wire:ignore.self aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">

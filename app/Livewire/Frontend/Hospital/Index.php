@@ -35,7 +35,6 @@ class Index extends Component
         $this->search = null;
 
         $this->cities = []; // if needed
-
         $this->dispatch('resetSelect2');
     }
 

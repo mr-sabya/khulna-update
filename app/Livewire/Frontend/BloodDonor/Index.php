@@ -31,7 +31,7 @@ class Index extends Component
         $this->resetPage(); // Reset to first page when filter changes
     }
 
-    public function resetFileds()
+    public function resetFields()
     {
         $this->reset(['district_id', 'city_id', 'blood_id', 'search']);
     }

@@ -44,7 +44,7 @@ Route::get('newspapers/{slug}', [App\Http\Controllers\Frontend\NewspaperControll
 
 // //doctor
 // Route::get('doctor', [App\Http\Controllers\Frontend\DoctorController::class, 'index'])->name('doctor.index');
-// Route::get('doctor/{id}', [App\Http\Controllers\Frontend\DoctorController::class, 'show'])->name('doctor.show');
+Route::get('doctor/{id}', [App\Http\Controllers\Frontend\DoctorController::class, 'show'])->name('doctor.show');
 // Route::get('doctor-search', [App\Http\Controllers\Frontend\DoctorController::class, 'search'])->name('doctor.search');
 
 // //journalist

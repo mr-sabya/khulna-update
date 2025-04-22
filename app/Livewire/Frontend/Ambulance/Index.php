@@ -28,7 +28,7 @@ class Index extends Component
         $this->dispatch('updateCityOptions', ['cities' => $this->cities]);
     }
 
-    public function resetFileds()
+    public function resetFields()
     {
         $this->district_id = null;
         $this->city_id = null;
